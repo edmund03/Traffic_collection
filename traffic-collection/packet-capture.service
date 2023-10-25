@@ -1,0 +1,13 @@
+[Unit]
+Description=packet-capture
+
+[Service]
+User=root
+ExecStart=/usr/local/bin/packet_capture start
+ExecReload=/usr/local/bin/packet_capture reload
+Restart=on-abnormal
+RestartSec=5s
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
